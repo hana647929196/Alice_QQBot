@@ -32,7 +32,7 @@ class MyClient(botpy.Client):
         # 调用菜单
         content = main(message=message)
 
-        # 配置回复信息
+        # 回复消息
         print(f"返回结果：{content}")
         try:
             message_result = await message.api.post_c2c_message(
@@ -48,9 +48,6 @@ class MyClient(botpy.Client):
                 msg_id=message.id,
                 content="Error:消息发送失败"
             )
-
-        # 返回消息
-        logs.info(message_result)
 
 
 # 开机
